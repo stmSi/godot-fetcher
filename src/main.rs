@@ -51,7 +51,7 @@ async fn main() {
     // Show Latest Version First.
     versions.reverse();
 
-    // loop and keep fetching subversions until we reach the endpoint file tar.xz or zip.
+    // loop and keep fetching subversions until we reach the endpoint file tar.xz or zip.. etc
     loop {
         let selected_version = choose(&mut versions);
 
@@ -62,6 +62,9 @@ async fn main() {
         if tuxfamily_link.contains(".tar.xz")
             || tuxfamily_link.contains(".zip")
             || tuxfamily_link.contains(".aar")
+            || tuxfamily_link.contains(".aab")
+            || tuxfamily_link.contains(".apk")
+            || tuxfamily_link.contains(".tpz")
         {
             break;
         }
